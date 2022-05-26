@@ -1,9 +1,9 @@
 
 <template>
     <div class="controls">
-        <button @click="$emit('add',1)">Add one</button>
-        <button @click="$emit('add',-1)">Substract one</button>
-        <button @click="fetchData(); $emit('add',rnd)">Add random async value: {{rnd}}</button>
+        <button data-testid="addBtn" @click="$emit('add',1)">Add one</button>
+        <button data-testid="subBtn" @click="$emit('add',-1)">Substract one</button>
+        <button data-testid="rndBtn" @click="fetchData(); $emit('add',rnd)">Add random async value: {{rnd}}</button>
     </div>
 </template>
 
