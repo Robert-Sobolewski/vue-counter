@@ -5,13 +5,11 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
 import Counter from './components/Counter.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld,
     Counter
 }
 });
