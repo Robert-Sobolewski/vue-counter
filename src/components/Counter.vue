@@ -1,22 +1,29 @@
 <template>
     <div>
-        <CounterDisplay value="3" />
+        <CounterDisplay :value=currentValue />
+        <Controls v-on:add="add" />
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import CounterDisplay from './CounterDisplay.vue';
+import Controls from './Controls.vue';
 
 export default defineComponent({
     setup () {
         
-
-        return {}
+        let currentValue = ref<Number>(0)
+        const add =(value:string)=>{
+        //   console.log('tofcurrent', value);
+        currentValue.value += parseInt(value)
+        }
+        return {currentValue,add}
     },
     components: {
-        CounterDisplay
-    }
+    CounterDisplay,
+    Controls
+}
 })
 </script>
 
