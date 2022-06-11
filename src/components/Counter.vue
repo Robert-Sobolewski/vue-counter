@@ -1,6 +1,6 @@
 <template>
     <div>
-        <CounterDisplay :value=currentValue />
+        <CounterDisplay :value="currentValue" />
         <Controls v-on:add="add" />
     </div>
 </template>
@@ -14,9 +14,8 @@ export default defineComponent({
     setup () {
         
         let currentValue = ref<Number>(0)
-        const add =(value:string)=>{
-        //   console.log('tofcurrent', value);
-        currentValue.value += parseInt(value)
+        const add =(value:number)=>{
+        currentValue.value = currentValue.value.valueOf() + value// = value;
         }
         return {currentValue,add}
     },
